@@ -1,26 +1,17 @@
-let input = document.getElementById('inputBox');
-let buttons = document.querySelectorAll('button');
-
-let string = "";
-let arr = Array.from(buttons);
-arr.forEach(button => {
-    button.addEventListener('click', (e) =>{
-        if(e.target.innerHTML == '='){
-            string = eval(string);
-            input.value = string;
-        }
-
-        else if(e.target.innerHTML == 'AC'){
-            string = "";
-            input.value = string;
-        }
-        else if(e.target.innerHTML == 'DEL'){
-            string = string.substring(0, string.length-1);
-            input.value = string;
-        }
-        else{
-            string += e.target.innerHTML;
-            input.value = string;
-        }
-})
-})
+function display(val){
+    document.getElementById('inputBox').value+=val;
+}
+function calculate(){
+    let cal=document.getElementById('inputBox').value;
+    let result=eval(cal);
+    document.getElementById('inputBox').value=result;
+}
+function clears(){
+    document.getElementById('inputBox').value="";
+}
+function dele(){
+    let val1=document.getElementById('inputBox').value;
+    val1=val1.substring(0,val1.length-1);
+    document.getElementById('inputBox').value=val1;
+}
+    
